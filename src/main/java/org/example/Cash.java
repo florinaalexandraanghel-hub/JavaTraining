@@ -32,11 +32,19 @@ public class Cash {
     public double getSumCoins(){
         return coins.entrySet().stream().mapToDouble(value -> value.getKey()* value.getValue()).sum();
     }
-    public int getSumBanknotes(){
+    public double getSumBanknotes(){
         return banknotes.entrySet().stream().mapToInt(value -> value.getKey()* value.getValue()).sum();
     }
 
     public double total(){
-        return getSumCoins()/100+getSumBanknotes();
+        return getSumCoins()/100.0+getSumBanknotes();
+    }
+
+    public void updateAfterWithdraw(Map<Integer,Integer> newBanknotes, Map<Integer,Integer> newCoins){
+        banknotes.replaceAll((b,c)->0);
+        coins.replaceAll((b,c)->0);
+
+        newBanknotes.forEach((value, quant)->banknotes.merge(value, quant, Integer::sum));
+        newCoins.forEach((value, quant)->coins.merge(value, quant, Integer::sum));
     }
 }
