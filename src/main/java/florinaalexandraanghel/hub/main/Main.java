@@ -1,4 +1,8 @@
-package org.example;
+package florinaalexandraanghel.hub.main;
+
+import florinaalexandraanghel.hub.model.Cash;
+import florinaalexandraanghel.hub.model.Client;
+import florinaalexandraanghel.hub.model.Terminal;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,8 +13,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     static void loadClients(List<Client> clientList, String cale) {
@@ -50,7 +52,7 @@ public class Main {
     static void main() {
         List<Client> clients = new ArrayList<>();
 
-        //list of customers who deposited
+
         loadClients(clients, "src/main/resources/transactions.csv");
         for (Client c : clients) {
             System.out.println(c.getFirstName() + " " + c.getLastName() +
@@ -63,52 +65,3 @@ public class Main {
     }
 }
 
-
-/*
-        Cash c1=new Cash(10,4);
-        Cash c2=new Cash(0.5,4);
-        Terminal terminal=new Terminal();
-        List<Cash> lista1=new ArrayList<>();
-        lista1.add(c1);
-        lista1.add(c2);
-        terminal.setBalanceClient(lista1);
-        System.out.println(terminal.getBalanceClient());
-        Cash c3=new Cash(0.5,4);
-        lista1.add(c3);
-        terminal.setBalanceClient(lista1);
-        System.out.println(terminal.getBalanceClient());
-        Cash c4=new Cash(0.5,4);
-        List<Cash> lista2=new ArrayList<>();
-        lista2.add(c4);
-        terminal.setBalanceClient(lista2);
-        System.out.println(terminal.getBalanceClient());
-
-
-        2.
-
-        Map<Integer, Integer> coins = new LinkedHashMap<>();
-        coins.put(50, 2);
-        Map<Integer, Integer> coins2 = new LinkedHashMap<>();
-        coins2.put(50, 4);
-
-        Map<Integer, Integer> banknotes = new LinkedHashMap<>();
-        banknotes.put(50, 1);
-        Map<Integer, Integer> banknotes2 = new LinkedHashMap<>();
-        banknotes2.put(100, 1);
-
-
-        Cash cash = new Cash(coins, banknotes);
-        Cash cash2 = new Cash(coins2, banknotes2);
-
-        Client client = new Client("Ion", "Popescu", cash);
-        Client client2 = new Client("I", "P", cash2);
-
-
-        Terminal seif = new Terminal();
-        seif.deposit(client);
-        seif.deposit(client2);
-
-        System.out.println("Total client1: " + client.getCash().total() + " lei");
-        System.out.println("Total client2: " + client2.getCash().total() + " lei");
-        System.out.println("Total seif: " + seif.totalTerminal() + " lei");
-*/

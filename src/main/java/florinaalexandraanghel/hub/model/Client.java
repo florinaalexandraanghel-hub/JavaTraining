@@ -1,4 +1,4 @@
-package org.example;
+package florinaalexandraanghel.hub.model;
 
 public class Client {
     private String firstName;
@@ -7,7 +7,7 @@ public class Client {
     private Cash cash;
 
 
-    Client(String firstName, String lastName, Cash cash){
+    public Client(String firstName, String lastName, Cash cash){
         this.firstName=firstName;
         this.lastName=lastName;
         this.cash=cash;

@@ -1,4 +1,4 @@
-package org.example;
+package florinaalexandraanghel.hub.model;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -11,7 +11,7 @@ public class Terminal {
    private Map<Integer,Integer> totalBanknotes;
 
 
-   Terminal(){
+   public Terminal(){
        this.totalCoins     = new LinkedHashMap<>();
        this.totalBanknotes = new LinkedHashMap<>();
        this.clients        = new ArrayList<>();

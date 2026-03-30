@@ -1,4 +1,4 @@
-package org.example;
+package florinaalexandraanghel.hub.model;
 
 import java.util.Date;
 

@@ -1,6 +1,5 @@
-package org.example;
+package florinaalexandraanghel.hub.model;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Cash {
@@ -8,7 +7,7 @@ public class Cash {
     private Map<Integer,Integer> coins;
     private Map<Integer,Integer> banknotes;
 
-    Cash(Map<Integer,Integer> coins, Map<Integer,Integer> banknotes){
+    public Cash(Map<Integer, Integer> coins, Map<Integer, Integer> banknotes){
         this.coins=coins;
         this.banknotes=banknotes;
     }
